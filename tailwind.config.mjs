@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     fontFamily: {
       body: ["Afacad", "Arial", "sans-serif"],
@@ -71,27 +71,27 @@ export default {
         "1-4-1": "minmax(0, 1fr) minmax(0, 4fr) minmax(0, 1fr)",
       },
       animation: {
-        'border': 'border 4s linear infinite',
-        'infinite-scroll': 'infinite-scroll 25s linear infinite',
-        'meteor': "meteor 5s linear infinite",
+        border: "border 4s linear infinite",
+        "infinite-scroll": "infinite-scroll 150s linear infinite",
+        meteor: "meteor 5s linear infinite",
       },
       keyframes: {
-          'border': {
-              to: { '--border-angle': '360deg' },
+        border: {
+          to: { "--border-angle": "360deg" },
+        },
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: 1 },
+          "70%": { opacity: 1 },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: 0,
           },
-          'infinite-scroll': {
-            from: { transform: 'translateX(0)' },
-            to: { transform: 'translateX(-100%)' },
-          },
-          'meteor': {
-            "0%": { transform: "rotate(215deg) translateX(0)", opacity: 1 },
-            "70%": { opacity: 1 },
-            "100%": {
-              transform: "rotate(215deg) translateX(-500px)",
-              opacity: 0,
-            },
-          },
-      },     
+        },
+      },
     },
   },
   plugins: ["prettier-plugin-tailwindcss", require("tailwindcss-animated")],
