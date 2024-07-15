@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics
+# Daniel Maurel - Portfolio
 
 ```sh
 npm create astro@latest -- --template basics

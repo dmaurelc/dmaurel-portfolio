@@ -1,0 +1,90 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro";
+
+export interface Proyecto {
+  id: number;
+  title: string;
+  slug: string;
+  frase_destacada: string;
+  captura_sitio_web: string;
+  pagina_web: string;
+  sobre_el_cliente: string;
+  sobre_el_proyecto: string;
+  imagen_destacada: string;
+  tipo: string;
+}
+
+export const getStaticPaths = (async () => {
+    const response = await fetch(`https://dmaurel.cl/wp-json/custom/v1/portfolio`);
+  const data = await response.json();
+  return data.map((element: Proyecto) => ({
+    params: { slug: element.slug },
+    props: element,
+  }));
+}) satisfies GetStaticPaths;
+
+const {
+  props: {
+    id,
+    title,
+    slug,
+    frase_destacada,
+    captura_sitio_web,
+    pagina_web,
+    sobre_el_cliente,
+    sobre_el_proyecto,
+    imagen_destacada,
+    tipo,
+  },
+}: { props: Proyecto } = Astro;
+---
+
+<Layout
+  url={`http://localhost:4321/${slug}`}
+  title={`${title} | ${frase_destacada} | Daniel Maurel`}
+  description={sobre_el_proyecto}
+  image={imagen_destacada}
+>
+  <section class="py-20">
+    <div class="container px-4 mx-auto flex flex-col gap-8">
+      
+      <div class="flex flex-col items-center gap-2">
+        <h1 class="text-brand text-6xl font-black text-center">{title} - {tipo}</h1>
+        <p class="text-center text-white text-2xl">{frase_destacada}</p>
+      </div>
+      
+      <div class="flex flex-col items-center gap-2">
+        <div class="flex gap-2">
+          
+        </div>
+        <div class="relative group">
+          <img class="p-6 border dark:border-accent-400 border-accent-100 border-solid rounded-xl overflow-hidden animate-fade-up animate-delay-500" src={captura_sitio_web} alt={title}>
+          <a
+            href={pagina_web}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-4 rounded-full bg-brand-500 font-semibold text-center text-slate-900 flex gap-2 items-center absolute top-8 right-8 hover:bg-slate-900 hover:text-white group-hover:opacity-100 opacity-0 transition-all duration-500"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M11 10h1v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h3v1H1v10h10v-3zM6 2l2.25 2.25L5 7.5L6.5 9l3.25-3.25L12 8V2H6z" fill="currentColor"/></svg>
+            
+            </a
+          >
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-start justify-start max-w-4xl mx-auto">
+        <div class="p-6">
+          <h4 class="text-brand text-2xl">Sobre el cliente</h4>
+          <p>{sobre_el_cliente}</p>
+        </div>
+
+        <div class="p-6">
+          <h4 class="text-brand text-2xl">Sobre el proyecto</h2>
+          <p>{sobre_el_proyecto}</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>

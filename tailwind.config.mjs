@@ -72,7 +72,7 @@ export default {
       },
       animation: {
         border: "border 4s linear infinite",
-        "infinite-scroll": "infinite-scroll 150s linear infinite",
+        "infinite-scroll": "infinite-scroll 70s linear infinite",
         meteor: "meteor 5s linear infinite",
       },
       keyframes: {

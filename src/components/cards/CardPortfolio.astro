@@ -1,0 +1,31 @@
+---
+const {
+  data: { id, slug, title, sobre_el_proyecto, frase_destacada, imagen_destacada },
+} = Astro.props;
+---
+
+<li
+  class="rounded-2xl overflow-hidden border border-solid dark:border-accent-400 border-accent-100 flex flex-col"
+>
+  <a href=`/portfolio/${slug}`>
+    <img
+      src={imagen_destacada}
+      alt={title}
+      loading="lazy"
+      class="w-full h-56 object-cover"
+      transition:name={`portfolio-image-${id}`}
+    />
+  </a>
+  <div class="h-full p-4 flex flex-col gap-2">
+    <h3 class="text-2xl font-bold text-brand">{title}</h3>
+    <span class="text-sm text-gray-400">{frase_destacada}</span>
+    <p class="text-base line-clamp-2">
+      {sobre_el_proyecto}
+    </p>
+    <a
+      href=`/portfolio/${slug}`
+      class="px-2 py-0.5 mt-auto border-2 rounded-lg border-brand-500 bg-brand-500 text-slate-900 font-semibold text-center transition-all hover:brightness-125"
+      >Ver proyecto</a
+    >
+  </div>
+</li>

@@ -1,0 +1,30 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import CardPortfolio from "../../components/cards/CardPortfolio.astro";
+
+const response = await fetch(
+  "https://dmaurel.cl/wp-json/custom/v1/portfolio"
+);
+// const response = await fetch(`${import.meta.env.FRONTEND_URL}/data.json`);
+const data = await response.json();
+---
+
+<Layout
+  url={import.meta.env.FRONTEND_URL}
+  title="▷ Portafolio Páginas Web - Daniel Maurel ⚡ Wordpress"
+  description="Portafolio de páginas web que he desarrollado para mis clientes. Agenda una reunión para comenzar con tu proyecto."
+  image="/img/paginas-web-empresas.webp"
+>
+  <section class="py-20">
+    <div class="container max-w-screen-xl px-4 mx-auto flex flex-col gap-16">
+      <h1 class="text-brand text-4xl font-black text-center">Una colección de sitios web que he creado.</h1>
+      <ul class="grid grid-cols-[repeat(auto-fit,_minmax(320px,_1fr))] gap-6">
+        {
+          data.map((proyecto: object) => {
+            return <CardPortfolio data={proyecto} />;
+          })
+        }
+      </ul>
+    </div>
+  </section>
+</Layout>
