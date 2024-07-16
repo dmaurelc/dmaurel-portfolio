@@ -1,6 +1,13 @@
 ---
 const {
-  data: { id, slug, title, sobre_el_proyecto, frase_destacada, imagen_destacada },
+  data: {
+    ID,
+    slug,
+    title,
+    sobre_el_proyecto,
+    frase_destacada,
+    imagen_destacada,
+  },
 } = Astro.props;
 ---
 
@@ -13,7 +20,7 @@ const {
       alt={title}
       loading="lazy"
       class="w-full h-56 object-cover"
-      transition:name={`portfolio-image-${id}`}
+      transition:name={`proyect-image-${ID}`}
     />
   </a>
   <div class="h-full p-4 flex flex-col gap-2">
