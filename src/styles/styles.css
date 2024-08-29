@@ -4,7 +4,7 @@
 
 .font-outline-1 {
   -webkit-text-stroke-width: 1px; /* Ancho del contorno */
-  -webkit-text-stroke-color: #FFC107; /* Color del contorno, #FFC107, theme(colors.brand.500) */
+  -webkit-text-stroke-color: #ffc107; /* Color del contorno, #FFC107, theme(colors.brand.500) */
 }
 .font-outline-2 {
   -webkit-text-stroke-width: 2px; /* Ancho del contorno */
@@ -14,40 +14,40 @@
 @property --border-angle {
   inherits: false;
   initial-value: 0deg;
-  syntax: '<angle>';
+  syntax: "<angle>";
 }
 
 /* afacad-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Afacad';
+  font-family: "Afacad";
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/afacad-v1-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/afacad-v1-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* afacad-500 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Afacad';
+  font-family: "Afacad";
   font-style: normal;
   font-weight: 500;
-  src: url('../fonts/afacad-v1-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/afacad-v1-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* afacad-600 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Afacad';
+  font-family: "Afacad";
   font-style: normal;
   font-weight: 600;
-  src: url('../fonts/afacad-v1-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/afacad-v1-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* afacad-700 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Afacad';
+  font-family: "Afacad";
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/afacad-v1-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/afacad-v1-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 @font-face {
@@ -153,9 +153,9 @@
   .clickable-card {
     position: relative;
   }
-  
+
   .clickable-card a::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;

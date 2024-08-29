@@ -2,6 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 import "../styles/styles.css";
 import Navigation from "../components/global/Navigation.astro";
+import Navbar from "../components/navbar/navbar.astro";
 import Footer from "../components/global/Footer.astro";
 
 let { url, title, description, image } = Astro.props;
@@ -46,7 +47,8 @@ image || image === "/img/paginas-web-empresas.webp";
     <ViewTransitions />
   </head>
   <body>
-    <Navigation />
+    <!-- <Navigation /> -->
+    <Navbar />
     <main class="grow">
       <slot />
     </main>

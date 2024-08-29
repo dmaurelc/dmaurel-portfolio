@@ -4,7 +4,6 @@ import ToggleDarkMode from "./ToggleDarkMode.astro";
 
 <header class="w-full mx-auto py-6 px-4">
   <div
-    x-data="{ open: false }"
     class="relative dark:bg-accent-600 bg-white rounded-xl flex flex-col w-full p-5 mx-auto md:items-center md:justify-between md:flex-row max-w-7xl px-8 border border-solid dark:border-accent-400 border-accent-100"
   >
     <div class="flex flex-row items-center justify-between lg:justify-start">
@@ -69,6 +68,17 @@ import ToggleDarkMode from "./ToggleDarkMode.astro";
           <a
             title="Proyectos Realizados"
             aria-label="Proyectos Realizados"
+            href="/sobre-mi"
+            class="py-2 text-accent dark:text-white hover:text-brand"
+          >
+            Sobre mi
+          </a>
+        </li>
+
+        <li>
+          <a
+            title="Proyectos Realizados"
+            aria-label="Proyectos Realizados"
             href="/portfolio"
             class="py-2 text-accent dark:text-white hover:text-brand"
           >
@@ -103,7 +113,7 @@ import ToggleDarkMode from "./ToggleDarkMode.astro";
             aria-label="Agendar reunión"
             href="https://calendly.com/dmaurel"
             target="_blank"
-            class="text-accent gap-3 text-lg flex items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-none justify-center px-6 ring-2 ring-transparent focus:ring-offset-2 focus:ring-brand-500 duration-200 py-2.5 rounded-full active:bg-white active:text-accent bg-brand hover:bg-white w-auto"
+            class="text-accent gap-3 text-lg flex items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-none justify-center px-6 ring-2 ring-transparent focus:ring-offset-2 focus:ring-brand-500 duration-200 py-1.5 rounded-md active:bg-white active:text-accent bg-brand hover:bg-white w-auto"
           >
             <span
               class="w-2.5 h-2.5 rounded-full bg-red-500 z-20 relative flex items-center justify-center"

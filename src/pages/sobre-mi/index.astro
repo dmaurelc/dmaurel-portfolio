@@ -1,0 +1,322 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionContact from "../../components/section/SectionContact.astro";
+
+const experiencia = [
+  {
+    title: "Daniel Maurel",
+    description: "Diseñador Web Freelance",
+    url: "https://dmaurel.cl",
+    date: "Jun 2017 - Actualidad",
+    image: "/img/dmaurel-icon.jpg",
+  },
+  {
+    title: "Agencia Kubo",
+    description: "Agencia Kubo",
+    url: "https://agenciakubo.com",
+    date: "Jun 2017 - Jun 2023",
+    image: "/img/kubo-logo.jpg",
+  },
+  {
+    title: "N2O Digital",
+    description: "Director Digital",
+    url: "https://n2o.cl",
+    date: "Nov 2015 - May 2017",
+    image: "/img/n2o_digital_logo.jpg",
+  },
+  {
+    title: "PagoRanking",
+    description: "Diseñador Web",
+    url: "https://p-ranking.com/",
+    date: "Oct 2014 - Nov 2015",
+    image: "/img/p_ranking_logo.jpg",
+  },
+  {
+    title: "TusClicks",
+    description: "Diseñador Web",
+    url: "https://tusclicks.com/",
+    date: "May 2012 - Sept 2014",
+    image: "/img/tusclicks_logo.jpg",
+  },
+  {
+    title: "Codelco",
+    description: "Práctica Profesional - Diseñador Web",
+    url: "https://codelco.com/",
+    date: "Ene 2012 - Mar 2012",
+    image: "/img/codelco.jpg",
+  },
+];
+
+const estudios = [
+  {
+    title: "Universidad de Chile",
+    description: "Tecnología en Informática, Analista de Sistemas",
+    url: "https://www.uvm.cl/",
+    date: "2009 - 2011",
+    image: "/img/estudios/uvmchile_logo.jpg",
+  },
+  {
+    title: "Universidad Viña de Mar",
+    description: "Técnico en Informática",
+    url: "https://www.uvm.cl/",
+    date: "2006 - 2008",
+    image: "/img/estudios/uvmchile_logo.jpg",
+  },
+];
+
+const certificaciones = [
+  {
+    title: "Curso de Tailwind CSS - Desde cero hasta profesional",
+    description: "Udemy",
+    url: "https://www.udemy.com/course-dashboard-redirect/?course_id=2544755",
+    instructor: "Victor Robles",
+    image: "/img/certificaciones/udemy_logo.jpg",
+  },
+  {
+    title: "Domina TailwindCSS - Desde cero a experto [proyectos reales]",
+    description: "Udemy",
+    url: "https://www.udemy.com/course-dashboard-redirect/?course_id=5453526",
+    instructor: "Jordan Alexander",
+    image: "/img/certificaciones/udemy_logo.jpg",
+  },
+  {
+    title: "Desarrollo web ultra rápido con Astro",
+    description: "Udemy",
+    url: "https://www.udemy.com/course-dashboard-redirect/?course_id=4902868",
+    instructor: "Jorge Maldonado B.",
+    image: "/img/certificaciones/udemy_logo.jpg",
+  },
+  {
+    title: "Astro 4 con View Transitions, React, TypeScript, Tailwind.",
+    description: "Udemy",
+    url: "https://www.udemy.com/course-dashboard-redirect/?course_id=5721114",
+    instructor: "Elliot Garamendi",
+    image: "/img/certificaciones/udemy_logo.jpg",
+  },
+];
+---
+
+<Layout
+  url={import.meta.env.FRONTEND_URL}
+  title="Diseño Web"
+  description="Soy diseñador web freelance, especializado en Wordpress ✅. Todos los planes web incluyen Hosting por 1 año GRATIS y certificado SSL!"
+  image="/img/paginas-web-empresas.webp"
+>
+  <section id="hero" class="mb-16">
+    <div
+      class="mx-auto w-full max-w-screen-xl space-y-8 px-8 py-32 border-b border-solid border-slate-600"
+    >
+      <div
+        class="md:gap-12 gap-10 flex md:flex-row flex-col justify-between items-center md:text-left text-center"
+      >
+        <div class="flex-col flex flex-1 md:gap-6 gap-2 md:order-1 order-2">
+          <h1 class="text-4xl font-bold leading-relaxed md:text-6xl">
+            Hola, mi nombre es Daniel 👋
+          </h1>
+
+          <div class="flex flex-col md:items-start items-center gap-4 max-w-xl">
+            <p class="inline-block md:text-xl">
+              Actualmente trabajo como <span
+                ><a
+                  class="text-brand decoration-brand underline hover:text-brand-500"
+                  href="/diseno-web"
+                >
+                  diseñador web freelance</a
+                ></span
+              > con más de 9 años de experiencia en desarrollo de páginas web wordpress
+              y tiendas virtuales a lo largo de todo Chile.
+            </p>
+            <a
+              href="https://www.linkedin.com/in/danielmaurel/"
+              target="_blank"
+              class="text-white bg-sky-600 rounded-sm gap-2 px-2 hover:text-slate-200"
+              >LinkedIn →</a
+            >
+          </div>
+        </div>
+        <div
+          class="relative flex shrink-0 overflow-hidden rounded-full md:size-96 size-56 border md:order-2 order-1"
+        >
+          <img
+            class="w-full h-full object-cover"
+            alt="Daniel Maurel"
+            src="/img/daniel-maurel.jpg"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia" class="pt-12">
+    <div class="flex min-h-0 flex-col gap-y-4 max-w-5xl mx-auto px-8">
+      <h2 class="text-3xl font-bold text-brand mb-6">Experiencia</h2>
+      <ul class="grid gap-6">
+        {
+          experiencia.map((item) => (
+            <li style="opacity: 1; filter: blur(0px); transform: translateY(-6px) translateZ(0px);">
+              <a
+                class="block cursor-pointer"
+                href="https://agenciakubo.com"
+                target="_blank"
+                aria-label="Agencia Kubo"
+              >
+                <div class="rounded-lg bg-card text-card-foreground flex">
+                  <div class="relative flex shrink-0 overflow-hidden rounded-full border size-12 m-auto bg-muted-background dark:bg-foreground">
+                    <img
+                      class="aspect-square h-full w-full object-contain"
+                      alt={item.title}
+                      src={item.image}
+                    />
+                  </div>
+                  <div class="flex-grow ml-4 items-center flex-col group">
+                    <div class="flex justify-between">
+                      <div class="flex flex-col gap-0.5 items-start">
+                        <h3 class="inline-flex items-center justify-center font-semibold leading-none md:text-lg text-base">
+                          {item.title}
+                          <span class="inline-flex gap-x-1" />
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100 rotate-0"
+                          >
+                            <path d="m9 18 6-6-6-6" />
+                          </svg>
+                        </h3>
+                        <p class="font-sans text-xs">{item.description}</p>
+                      </div>
+                      <div class="text-xs text-right">
+                        <p>{item.date}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section id="estudios" class="pt-12">
+    <div class="flex min-h-0 flex-col gap-y-4 max-w-5xl mx-auto px-8">
+      <h2 class="text-3xl font-bold text-brand mb-6">Estudios</h2>
+      <ul class="grid gap-6">
+        {
+          estudios.map((item) => (
+            <li style="opacity: 1; filter: blur(0px); transform: translateY(-6px) translateZ(0px);">
+              <a class="block cursor-pointer" href={item.url}>
+                <div class="rounded-lg bg-card text-card-foreground flex">
+                  <>
+                    <div class="flex-none">
+                      <span class="relative flex shrink-0 overflow-hidden rounded-full border size-12 m-auto bg-muted-background dark:bg-foreground">
+                        <img
+                          class="aspect-square h-full w-full object-contain"
+                          alt={item.title}
+                          src={item.image}
+                        />
+                      </span>
+                    </div>
+                    <div class="flex-grow ml-4 items-center flex-col group">
+                      <div class="flex flex-col">
+                        <div class="flex items-center justify-between gap-x-2 text-base">
+                          <h3 class="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
+                            {item.title}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="lucide lucide-chevron-right size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100 rotate-0"
+                            >
+                              <path d="m9 18 6-6-6-6" />
+                            </svg>
+                          </h3>
+                          <div class="text-xs sm:text-sm tabular-nums text-muted-foreground text-right">
+                            {item.date}
+                          </div>
+                        </div>
+                        <div class="font-sans text-xs">{item.description}</div>
+                      </div>
+                    </div>
+                  </>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section id="certificaciones" class="pt-12">
+    <div class="flex min-h-0 flex-col gap-y-4 max-w-5xl mx-auto px-8">
+      <h2 class="text-3xl font-bold text-brand mb-6">Certificaciones</h2>
+      {
+        certificaciones.map((item) => (
+          <div style="opacity: 1; filter: blur(0px); transform: translateY(-6px) translateZ(0px);">
+            <a class="block cursor-pointer" href={item.url}>
+              <div class="rounded-lg bg-card text-card-foreground flex">
+                <>
+                  <div class="flex-none">
+                    <span class="relative flex shrink-0 overflow-hidden rounded-full border size-12 m-auto bg-muted-background dark:bg-foreground">
+                      <img
+                        class="aspect-square h-full w-full object-contain"
+                        alt={item.title}
+                        src={item.image}
+                      />
+                    </span>
+                  </div>
+                  <div class="flex-grow ml-4 items-center flex-col group">
+                    <div class="flex flex-col">
+                      <>
+                        <div class="flex items-center justify-between gap-x-2 text-base">
+                          <>
+                            <h3 class="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
+                              {item.title}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-chevron-right size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100 rotate-0"
+                              >
+                                <path d="m9 18 6-6-6-6" />
+                              </svg>
+                            </h3>
+                            <div class="text-xs sm:text-sm tabular-nums text-muted-foreground text-right">
+                              {item.instructor}
+                            </div>
+                          </>
+                        </div>
+                        <div class="font-sans text-xs">{item.description}</div>
+                      </>
+                    </div>
+                  </div>
+                </>
+              </div>
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+  <SectionContact />
+</Layout>
